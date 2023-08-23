@@ -53,5 +53,7 @@ Returned a JSON list of the minimum temperature, the average temperature, and th
 
 For a specified start, calculated TMIN, TAVG, and TMAX for all the dates greater than or equal to the start date.
 
+*Technologies used: Microsoft Visual Studio Code
+
 For a specified start date and end date, calculated TMIN, TAVG, and TMAX for the dates from the start date to the end date, inclusive.
 
