@@ -35,9 +35,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/start<br/>"
-        f"/api/v1.0/start/end<br/>"
-        f"Note: To access values between a start and end date enter both dates using the format: yyy-mm-dd/yyy-mm-dd"
+        f"/api/v1.0/start -- Enter start date in YYYY-MM-DD format<br/>"
+        f"/api/v1.0/start/end -- Enter start date and end date in YYYY-MM-DD/YYYY-MM-DD format<br/>"
     )
 
 # Create a route that queries precipiation levels and dates and returns a dictionary using date as key and precipation as value
@@ -59,7 +58,7 @@ def precipitation():
     for date,prcp  in precip_results:
         prcp_dict = {}
         prcp_dict["date"] = date
-        prcp_dict["prcp"] = prcp
+        prcp_dict["precipitation"] = prcp
                
         precip_all.append(prcp_dict)
 
@@ -99,7 +98,7 @@ def tobs():
 
     """List of all tobs"""
     # Query tobs
-    tobs_results = session.query(Measurement.date,  Measurement.tobs, Measurement.station).\
+    tobs_results = session.query(Measurement.date,  Measurement.tobs, Measurement.station, Measurement.prcp).\
         filter(Measurement.date >= '2016-08-23').\
         filter(Measurement.date <= '2017-08-23').\
         filter(Measurement.station == "USC00519281").\
@@ -109,11 +108,12 @@ def tobs():
 
     # Convert list to dictionary
     tobs_all = []
-    for date, tobs, station in tobs_results:
+    for date, tobs, station, prcp in tobs_results:
         tobs_dict = {}
         tobs_dict["date"] = date
         tobs_dict["tobs"] = tobs
         tobs_dict["station"] = station
+        tobs_dict["precipitation"] = prcp
         
         tobs_all.append(tobs_dict)
 
