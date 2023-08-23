@@ -25,7 +25,7 @@ Then I had to design a query to get the previous 12 months of temperature observ
 by the station that has the greatest number of observations. Query the previous 12 months of TOBS data for that station, and then 
 plot the results as a histogram with bins=12 and close the session.
 
-<img src="https://github.com/IRTakan/SQLAlchemy-Challenge/blob/main/Images/precip.png?raw=true" width=500 height=400>
+<img src="https://github.com/IRTakan/SQLAlchemy-Challenge/blob/main/Images/tobs.png?raw=true" width=500 height=400>
 
 --Part 2: Design Your Climate App
 
