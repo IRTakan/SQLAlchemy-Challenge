@@ -14,6 +14,8 @@ I found the most recent date in the dataset. Using that date, I got the previous
 querying the previous 12 months of data. Then created a plot the results by using the DataFrame plot method and
 used Pandas to print the summary statistics for the precipitation data.
 
+<img src="https://github.com/IRTakan/SQLAlchemy-Challenge/blob/main/Images/precip.png?raw=true" width=500 height=400>
+
 - Station Analysis
   
 For this analysis I designed a query to calculate the total number of stations in the dataset and also find the most-active
@@ -22,6 +24,8 @@ stations (that is, the stations that have the most rows). The list of stations a
 Then I had to design a query to get the previous 12 months of temperature observation (TOBS) data. Which involved filtering
 by the station that has the greatest number of observations. Query the previous 12 months of TOBS data for that station, and then 
 plot the results as a histogram with bins=12 and close the session.
+
+<img src="https://github.com/IRTakan/SQLAlchemy-Challenge/blob/main/Images/precip.png?raw=true" width=500 height=400>
 
 --Part 2: Design Your Climate App
 
